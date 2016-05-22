@@ -24,14 +24,31 @@ ENTRYPOINT  ["/usr/bin/redis-server"]
 $ docker build -t <your username>/redis .
 ```
 
-#### 4. Run redis with expose 6379 port
+#### 4. Run redis
+
+- If you want to expose port to the host, specify `-p` parameter.
 
 ```
-$ docker run -d --name redis -p 6379:6379 dockerfile/redis
+$ docker run -d --name redis -p 6379:6379 <your username>/redis
+```
+
+- If not, please use the following
+
+```
+$ docker run -d --name redis <your username>/redis
 ```
 
 #### 5. Test redis server connection
 
+- If you expose port to the host, you can directly connect to the redis server with cli
+
 ```
+$ redis-cli
+```
+
+- If not, try to connect to the bash of your redis server
+
+```
+$ docker exec -it <your username>/redis /bin/bash
 $ redis-cli
 ```
