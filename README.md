@@ -1,6 +1,8 @@
 Docker Redis
 --
 
+Step by step to create your redis docker image and start it by exposing 6379 port.
+
 #### 1. Create Docekrfile
 
 ```
